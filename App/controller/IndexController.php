@@ -1,6 +1,7 @@
 <?php
 namespace Controller;
 use FortController\BaseController;
+use FortRender\BaseTemplate;
 
 class IndexController extends BaseController {
 
@@ -9,14 +10,12 @@ class IndexController extends BaseController {
         parent::__construct();
     }
 
+    /**
+     * Index page method
+     */
     public function index()
     {
-        echo 'index page';
-    }
-
-    public function about()
-    {
-        echo 'about page';
+        $this->render('home', array('username' => 'rraz'));
     }
 
 }

@@ -1,6 +1,10 @@
 <?php
     $rootDir = __DIR__ . '/../';
 
+    // include render system
+    require_once($rootDir . 'FortRender/src/TemplateManager.php');
+    require_once($rootDir . 'FortRender/src/BaseTemplate.php');
+    
     // include router
     require_once($rootDir . 'FortRouter/src/Route.php');
     require_once($rootDir . 'FortRouter/src/Router.php');
