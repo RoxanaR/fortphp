@@ -1,11 +1,11 @@
 <?php
-use FortRouter\Route;
-use FortRouter\Router;
+use Fort\Router\Route;
+use Fort\Router\RouteManager;
 
-$router = new Router();
+$router = new Fort\Router\RouteManager();
 
 // routing config
-$router->add(new Route('/', 'GET', 'IndexController', 'index'));
-$router->add(new Route('/about', 'GET', 'IndexController', 'about'));
+$router->add(new Route('/', 'GET', 'Controller\IndexController', 'index'));
+$router->add(new Route('/about', 'GET', 'Controller\\IndexController', 'about'));
 
 $router->exec();

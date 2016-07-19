@@ -1,7 +1,7 @@
 <?php
 namespace Controller;
-use FortController\BaseController;
-use FortRender\BaseTemplate;
+use Fort\Controller\BaseController;
+use Fort\Render\BaseTemplate;
 
 class IndexController extends BaseController {
 
