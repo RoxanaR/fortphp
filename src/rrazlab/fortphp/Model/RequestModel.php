@@ -1,5 +1,5 @@
 <?php
-namespace Fort\Model;
+namespace Rrazlab\Fortphp\Model;
 
 class RequestModel {
 

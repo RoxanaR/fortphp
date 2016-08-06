@@ -1,5 +1,5 @@
 <?php
-namespace Fort\Router;
+namespace Rrazlab\Fortphp\Router;
 
 class Route {
     /**

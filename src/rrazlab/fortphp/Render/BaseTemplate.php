@@ -1,5 +1,5 @@
 <?php
-namespace Fort\Render;
+namespace Rrazlab\Fortphp\Render;
 
 class BaseTemplate {
 

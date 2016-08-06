@@ -1,0 +1,24 @@
+{
+    "name": "muntianrazvan/fortphp",
+    "description": "Minimal PHP MVC framework",
+    "license": "MIT",
+    "keywords": ["mvc", "minimal"],
+    "authors": [
+        {
+            "name": "rraz0",
+            "email": "catalinm.work@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "swiftmailer/swiftmailer": "^5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rrazlab\\Fortphp\\": "src"
+        }
+    }
+}

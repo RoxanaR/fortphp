@@ -1,6 +1,6 @@
 <?php
-namespace Fort\Render;
-use Fort\Render\BaseTemplate;
+namespace Rrazlab\Fortphp\Render;
+use Rrazlab\Fortphp\Render\BaseTemplate;
 
 class TemplateManager {
 

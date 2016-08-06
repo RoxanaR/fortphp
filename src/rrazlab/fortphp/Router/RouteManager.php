@@ -1,6 +1,6 @@
 <?php
-namespace Fort\Router;
-use Fort\Model\RequestModel;
+namespace Rrazlab\Fortphp\Router;
+use Rrazlab\Fortphp\Model\RequestModel;
 
 class RouteManager {
     /**

@@ -1,7 +1,7 @@
 <?php
-namespace Fort\Controller;
-use Fort\Model\JsonModel;
-use Fort\Render\TemplateManager;
+namespace Rrazlab\Fortphp\Controller;
+use Rrazlab\Fortphp\Model\JsonModel;
+use Rrazlab\Fortphp\Render\TemplateManager;
 
 /**
  * Default controller model

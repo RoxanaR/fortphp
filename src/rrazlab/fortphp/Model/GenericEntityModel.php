@@ -1,6 +1,5 @@
 <?php
-namespace Fort\Model;
-use Entity\Comment;
+namespace Rrazlab\Fortphp\Model;
 
 class GenericEntityModel {
 
