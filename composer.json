@@ -1,5 +1,5 @@
 {
-    "name": "muntianrazvan/fortphp",
+    "name": "rrazlab/fortphp",
     "description": "Minimal PHP MVC framework",
     "license": "MIT",
     "keywords": ["mvc", "minimal"],

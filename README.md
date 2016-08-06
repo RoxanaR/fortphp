@@ -1,7 +1,1 @@
-FortPHP v 0.0.1
-
-==Entities==
-
-- Services
-- Controller
-- Model
+FortPHP is a simple MVC framework. It is still in develop.
