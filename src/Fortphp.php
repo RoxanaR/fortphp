@@ -14,13 +14,3 @@ class Fortphp {
         return $this->config;
     }
 }
-
-/*<?php
-
-// ========== Require controllers ==========
-foreach ($config['controllers'] as $controller) {
-    require_once($controller['path']);
-}
-
-// ========== Require views ================
-foreach*/
