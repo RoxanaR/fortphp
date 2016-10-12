@@ -8,6 +8,8 @@ class RouteManager {
      */
     private $routes;
 
+    private $defaults;
+
     /**
      * Router constructor - init routes array
      */
@@ -44,5 +46,27 @@ class RouteManager {
         }
         echo '404';
         return false;
+    }
+
+    public function parseRoutes($routes)
+    {
+        if (!is_array($routes)) {
+            return false;
+        }
+        
+        foreach($routes as $route) {
+            $this->routeManager->add(
+                new Route($route['url'], $route['method'], $route['controller'], $route['action'])
+            );
+        }
+    }
+
+    public function setDefaults($defaults)
+    {
+        if (!is_array($defaults)) {
+            return false;
+        }
+
+        $this->defaults = $defaults;
     }
 }
