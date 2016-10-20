@@ -2,6 +2,8 @@
 namespace Rrazlab\Fortphp\Router;
 use Rrazlab\Fortphp\Model\RequestModel;
 
+use App\Controller\StaticController;
+
 class RouteManager {
     /**
      * @var $routes array - routes array
@@ -34,7 +36,6 @@ class RouteManager {
         $requestModel = new RequestModel();
         foreach($this->routes as $route) {
             if ($requestModel->method === $route->method && $requestModel->uri === $route->url) {
-                $controllerName = 'Fort\\Controller\\' . $route->controller;
                 $controllerName = $route->controller;
                 $controllerObject = new $controllerName();
                 $actionName = $route->action;
@@ -44,5 +45,16 @@ class RouteManager {
         }
         echo '404';
         return false;
+    }
+
+    public function addRoutes($routeConfig)
+    {
+        if (!is_array($routeConfig)) {
+            return false;
+        }
+
+        foreach($routeConfig as $key => $route) {
+            $this->add(new Route($route['url'], $route['method'], $route['controller'], $route['action']));
+        }
     }
 }

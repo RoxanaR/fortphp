@@ -1,16 +1,16 @@
 <?php namespace Rrazlab\Fortphp;
 
+use Rrazlab\Fortphp\Helper\ConfigHelper;
+
 class Fortphp {
 
-    private $config;
+    private $configHelper, $routeManager;
 
     public function __construct($config)
     {
-        $this->config = $config;
-    }
+        $this->configHelper = new ConfigHelper($config);
 
-    public function getConfig()
-    {
-        return $this->config;
+        $this->routeManager = new RouteManager();
+        $this->routeManager->add(new Route());
     }
 }
