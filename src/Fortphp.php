@@ -1,6 +1,8 @@
 <?php namespace Rrazlab\Fortphp;
 
 use Rrazlab\Fortphp\Helper\ConfigHelper;
+use Rrazlab\Fortphp\Router\RouteManager;
+use Rrazlab\Fortphp\Router\Route;
 
 class Fortphp {
 
