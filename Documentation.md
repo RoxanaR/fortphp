@@ -98,8 +98,8 @@ Config object structure:
 
 #### routes['action'] - required
 - action alias (method that needs to be called from within controller)
-- if not specified, trigger 105
-- if action/method cannot be found, trigger 106
+- if not specified, trigger 103
+- if action/method cannot be found, trigger 104
 
 #### routes['view'] - optional
 - specify the view that is rendering
@@ -111,7 +111,7 @@ Config object structure:
 - array used to specify view files
 - every view has a unique alias used as key in views array
 
-#### routes['path'] - required
+#### views['path'] - required
 - path to the view file
 - if not defined trigger 201
 
