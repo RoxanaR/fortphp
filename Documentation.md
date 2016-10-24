@@ -4,14 +4,15 @@ FortPHP
 
 ## 1. General
 
-FortPHP is a simple and minimalist MVC framework. It's purpose is to help the user realize an app as fast as possible.
+FortPHP is a simple and minimalist MVC framework. The purpose of the framework is to help the user realize an app as fast as possible.
 
 ## 2. About the developer
 
-- background
-    - numele
-    - educatie, ocupatie
-    - linkuri online - github, twitter, etc
+My name is Razvan, I am a freelancer from Romania. I am a full stack web developer with experience in a bunch of frameworks.
+
+Web development started as a hobby in high school. Creating my first web page using HTML and CSS made me feel great. Later, I heard the concept of freelancing. I also started developing my own projects, FortPHP is one of them.
+
+More about me: http://rrazlab.com
 
 ## 3. Installation
 
@@ -28,9 +29,9 @@ Config object structure:
 ```php
 [
     'defaults' => [
-        'default_method' => 'GET',
-        'default_controller' => '\App\Controller\StaticController',
-        'default_view' => 'default',
+        'method' => 'GET',
+        'controller' => '\App\Controller\StaticController',
+        'view' => 'default',
     ],
     'routes' => [
         'home' => [
@@ -59,71 +60,72 @@ Config object structure:
 ]
 ```
 
-defaults - optional
+### 5.1 Defaults array
+- defaults array is optional
 - array of key value pairs
 - define a set of default values
 - if not specified when declaring routes, these values are used
 
-default_method - optional
+#### defaults['method'] - optional
 - define the default request method
 - used when method not specified when declaring routes
 
-default_controller - optional
+#### defaults['controller'] - optional
 - define the default controller (including namespace)
 - used when controller not specified when declaring routes
 
-default_view - optional
+#### defaults['view'] - optional
 - define the default view template
 - used when the view template not specified when defining a route
 
-routes - required
+### 5.2 Routes array
+- routes array is required
 - array containing routes data
 - a route consists of four parameters (url, action, view, controller)
-- if not defined trigger error 100
-- if empty trigger error 101
+- if not defined or empty trigger error 101
 
-url - required
+#### routes['url'] - required
 - route request url; used for checking/matching the request url
 - if not defined trigger 102
 
-method - optional
+#### routes['method'] - optional
 - values: GET, POST, UPDATE, DELETE
 - can be used the default method; if not set in both locations, 103 error will be triggered
 
-controller - optional
+#### routes['controller'] - optional
 - requires full name (with namespace)
 - can be used the default controller; if not set in both locations, 104 error will be triggered
 
-action - required
+#### routes['action'] - required
 - action alias (method that needs to be called from within controller)
 - if not specified, trigger 105
 - if action/method cannot be found, trigger 106
 
-view - optional
+#### routes['view'] - optional
 - specify the view that is rendering
 - if not defined, default view will be used
 - view can be missed - controlled does not need to use a view file
 
-views - optional
+### 5.3. Views array
+- views array is optional
 - array used to specify view files
 - every view has a unique alias used as key in views array
-- if duplicate alias, trigger 107
 
-path - required
+#### routes['path'] - required
 - path to the view file
-- if not defined trigger 108
+- if not defined trigger 201
 
 ## 6. Errors
 
-Error Codes
-100 - config routes not defined
-101 - config routes not defined
-102 - route url not defined
-103 - method property not added in route property nor as default value
-104 - controller not specified to route
-105 - action not specified
-106 - action not found in the specified controller
-107 - views have duplicate aliases
-108 - view path not defined
+### 100 - Routes Errors
+101 - Routes array not defined or empty
+102 - Url not defined for [route] route
+103 - Method not defined for [route] route
+104 - Controller not defined for [route] route
+105 - Action not defined for [route] route
+106 - Action cannot be found in [controller] controller
+
+### 200 - Views Errors
+201 - Path not defined for [view] view
 
 ## 7. Tests

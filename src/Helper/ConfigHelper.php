@@ -10,6 +10,9 @@ class ConfigHelper {
      */
     public function __construct($config)
     {
-        $this->configRoute = new ConfigRoute($config['routes'], $config['defaults']);
+        $this->configRoute = new ConfigRoute(
+            isset($config['routes']) ? $config['routes'] : array(),
+            isset($config['defaults']) ? $config['defaults'] : array()
+        );
     }
 }

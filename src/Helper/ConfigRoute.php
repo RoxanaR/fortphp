@@ -46,6 +46,20 @@ class ConfigRoute {
     public static $requiredKeys = ['url', 'method', 'controller', 'action'];
 
     /**
+     * Array containing the error code. More details about error codes can be
+     * found in Documentation.md, 'Errors' section.
+     *
+     * @var array
+     */
+    public static $errorCodes = [
+        'empty_routes_array' => 101,
+        'empty_route_url' => 102,
+        'empty_route_method' => 103,
+        'empty_route_controller' => 104,
+        'empty_route_action' => 105
+    ];
+
+    /**
      * ConfigRoute constructor
      *
      * @param array $routes - array containing routes that should be validated
@@ -100,12 +114,14 @@ class ConfigRoute {
     {
         // set route array to an empty array if @param $routes is null
         if (!($routes && is_array($routes))) {
+            e(SELF::$errorCodes['empty_routes_array']);
             $this->routes = [];
             return false;
         }
 
         foreach ($routes as $key => $route) {
-            // TODO add to documentation: "if route has keys that are not allowed, route will be ignored"
+            // TODO add to documentation: "if route has keys that are not
+            // allowed, route will be ignored"
             // if route has keys that are not allowed continue the loop and
             // ignore the route
             if (array_diff(array_keys($route), SELF::$allowedKeys['routes'])) {
@@ -122,6 +138,8 @@ class ConfigRoute {
                     if (isset($this->defaults[$requiredKey])) {
                         $route[$requiredKey] = $this->defaults[$requiredKey];
                     } else {
+                        // trigger specific error for required key
+                        e(SELF::$errorCodes['empty_route_' . $requiredKey], $key);
                         $validRoute = false;
                     }
                 }

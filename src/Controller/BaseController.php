@@ -24,9 +24,7 @@ class BaseController {
      */
     public function __construct()
     {
-        global $config;
         $this->jsonModel = new JsonModel();
-        $this->templateManager = new TemplateManager($config['view']);
     }
 
     /**

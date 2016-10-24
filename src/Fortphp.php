@@ -11,8 +11,5 @@ class Fortphp {
     public function __construct($config)
     {
         $this->configHelper = new ConfigHelper($config);
-
-        $this->routeManager = new RouteManager();
-        $this->routeManager->add(new Route());
     }
 }
